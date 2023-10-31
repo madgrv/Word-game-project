@@ -8,7 +8,7 @@ import GuessResults from '../GuessResults';
 import Banner from '../Banner/Banner';
 import NewGame from '../NewGame/NewGame';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
-import Keyboard from '../Keyboard';
+// import Keyboard from '../Keyboard';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -17,6 +17,7 @@ console.info({ answer });
 
 function Game() {
 	const [guess, setGuess] = React.useState([]);
+
 	const [gameStatus, setGameStatus] = React.useState(undefined);
 	const numGuesses = guess.length;
 
@@ -40,6 +41,8 @@ function Game() {
 			<Guessinput
 				handleSubmitGuess={handleSubmitGuess}
 				gameStatus={gameStatus}
+				// guess={guess}
+				// setGuess={setGuess}
 			/>
 			{/* <Keyboard /> */}
 			{gameStatus && <NewGame />}
